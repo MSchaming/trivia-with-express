@@ -5,5 +5,10 @@ html(lang="en")
         link(rel='stylesheet', href='/css/main.css')
     body
         include includes/header.pug
+        if name
+            h2 Welcome, #{name}!
+            form(action="/goodbye", method="POST")
+                label Reset Cookie
+                button(type="submit") GoodBye Cookie!
         block content
         include includes/footer.pug         
