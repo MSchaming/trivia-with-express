@@ -1,14 +1,19 @@
-extends layout.pug
+extends app.pug
 
-block content
-	section#content
-		h2= text
-		if hint
-			p
-				i Hint: #{hint};				
-		button
-			a(href=`?side=${link}`)= linkDisplay
-		br
-		br
-		button
-			a(href='/cards') Next Question
+block card
+	section(class='flashcards')
+		.card(class=`card-${linkDisplay}`)
+			.card-header
+			h1.card-title= linkDisplay
+			#content
+				h2= text
+				if hint
+					p.hint
+						i= `Hint:  ${hint}`
+			.card-flip-wrap
+				a(href=`${id}?side=${link}`)
+					img.card-flip(src='/static/img/flip.svg')
+			.card-next
+				a(href='/cards')
+					img(src='/static/img/next.svg')
+	script(src='/static/app.js')

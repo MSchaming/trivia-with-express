@@ -1,11 +1,8 @@
-extends layout.pug
+extends app.pug
 
-block content
-	section#content
-	br
-	br
-	h4 Ready to begin? 
-	button
-		a(href='/cards') Ready! Set! Go!
+block intro
+	h1.namecard-prompt Let's Get Started!
+	a.namecard-submit(href='/cards') Begin!
+
 	
 	

@@ -1,0 +1,17 @@
+extends layout
+
+block main
+    section(class='namecard')
+        div(class="namecard-login")
+            if name
+                p.namecard-greeting Welcome, #{name}!
+                div(class="goodbye")
+                    form.namecard-exit(action='/goodbye', method='POST')
+                        button(type='submit')
+                            img(src='/static/img/close.svg')
+                    span.exit-app Exit App            
+            else
+                p(class='namecard-greeting') Hi, Student!
+        block intro
+    block card
+
